@@ -1,0 +1,17 @@
+import pandas as pd
+
+df1 = pd.read_csv("Finance Report.csv")
+df2 = pd.read_csv("Vehicle Finance CSV Report.csv")
+
+df_merged = df1.merge(df2[['Registration', 'FinanceAPR']], on='Registration', how='left')
+
+df_merged = df_merged.drop(columns=["Sale Agreed Date", "Branch", "Location", "PPP", "Agreement No", "Email Address", "Stock Type", "Customer Name", "Description", "Sales Invoice Date", "Sales Person", "Total Price", "Make", "Registration", "Sales Invoice No" ])
+
+
+df_merged["Stock Number"] = "U" + df_merged["Stock Number"].astype(str)
+
+df_merged["Finance Type"] = df1["Finance Commission"].fillna(0).apply(lambda x: "Internal" if x > 0 else "External")
+df_merged.to_csv("Finance_add_month_name.csv", index=False)
+
+print("Done! Saved as Finance_add_month_name.csv")
+input("Press Enter to exit...")  # <-- keeps the window open
