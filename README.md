@@ -29,7 +29,7 @@ The project includes Python scripts for data cleaning, CSV datasets, and a custo
 ---
 
 ## How to Use
-1. From the folder structure, find Used_Car_Report.pbix, click this and then click 'view raw' to download, open this in Power BI Desktop.
+1. From the folder structure, find Used_Car_Report.pbix, click this and then click 'view raw' to download, open this in Power BI Desktop (this will need to be installed, if not already)
 2. Explore the dashboard using the provided slicers and filters.  
 3. Review the metrics and visualisations for insights into anonymised sales and finance data.
 
